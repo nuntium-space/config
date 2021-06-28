@@ -13,11 +13,13 @@ This repo contains global configuration files that are not specific to any other
     - [terraform.tfvars](terraform/local/terraform.tfvars): input variables (**THIS FILE MUST ONLY CONTAIN NON-SENSITIVE VARIABLES**)
     - [variables.tf](terraform/local/variables.tf): input variables declarations
 - [.gitignore](.gitignore)
+- [docker-compose.yml](docker-compose.yml): Docker Compose file used to create the [localstack][localstack] container
 - [README.md](README.md)
+- [schema.sql](schema.sql): SQL schema for the DB
 
 ## Test
 
-### Install [localstack](https://github.com/localstack/localstack)
+### Install [localstack][localstack]
 
 #### Install Docker
 
@@ -69,5 +71,6 @@ Run
 terraform apply
 ```
 
+[localstack]: https://github.com/localstack/localstack
 [s3]: https://aws.amazon.com/s3
 [terraform]: https://www.terraform.io
