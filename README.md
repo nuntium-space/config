@@ -23,6 +23,8 @@ This repo contains global configuration files that are not specific to any other
 
 See [here](https://www.terraform.io/downloads.html).
 
+***Note:** you must run the following commands inside the [terraform/local](terraform/local) folder.*
+
 #### Initialize
 
 Run
