@@ -17,6 +17,34 @@ This repo contains global configuration files that are not specific to any other
 
 ## Test
 
+### Install [localstack](https://github.com/localstack/localstack)
+
+#### Install Docker
+
+See [here](https://www.docker.com/products/docker-desktop).
+
+#### Build image and start
+
+Run
+
+```
+docker-compose up --build
+```
+
+### Install `stripe` CLI
+
+See [here](https://stripe.com/docs/stripe-cli).
+
+### Create database
+
+#### Install PostgreSQL
+
+See [here](https://www.postgresql.org/download/).
+
+#### Create tables, views, etc.
+
+Run [`schema.sql`](schema.sql).
+
 ### [Terraform][terraform]
 
 #### Install
