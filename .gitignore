@@ -1,2 +1,4 @@
+.localstack
+
 .terraform
 terraform.tfstate.backup

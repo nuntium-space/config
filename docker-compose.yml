@@ -13,5 +13,8 @@ services:
       - SERVICES=apigateway,cloudformation,es,iam,lambda,s3,sts
       - DATA_DIR=/tmp/localstack/data
       - LAMBDA_REMOTE_DOCKER=false
+      - HOST_TMP_FOLDER=./.localstack
+      - DEBUG=true
     volumes:
-      - /tmp/localstack
+      - ./.localstack:/tmp/localstack
+      - /var/run/docker.sock:/var/run/docker.sock
