@@ -10,7 +10,8 @@ services:
       - "4566:4566"
       - "4571:4571"
     environment:
-      - SERVICES=s3,es
+      - SERVICES=apigateway,cloudformation,es,iam,lambda,s3,sts
       - DATA_DIR=/tmp/localstack/data
+      - LAMBDA_REMOTE_DOCKER=false
     volumes:
       - /tmp/localstack
