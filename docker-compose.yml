@@ -3,7 +3,7 @@ version: "3.9"
 services:
   localstack:
     container_name: localstack
-    image: localstack/localstack
+    image: localstack/localstack-full
     restart: always
     network_mode: bridge
     ports:
@@ -14,6 +14,7 @@ services:
       - DATA_DIR=/tmp/localstack/data
       - LAMBDA_REMOTE_DOCKER=false
       - HOST_TMP_FOLDER=./.localstack
+      - PORT_WEB_UI=9000
       - DEBUG=true
     volumes:
       - ./.localstack:/tmp/localstack
