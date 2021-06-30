@@ -91,6 +91,17 @@ Run
 terraform apply
 ```
 
+### Elasticsearch
+
+Run
+
+```
+curl -X PUT "http://localhost:4571/articles"
+curl -X PUT "http://localhost:4571/publishers"
+```
+
+to create the `articles` and `publishers` indeces.
+
 [localstack]: https://github.com/localstack/localstack
 [s3]: https://aws.amazon.com/s3
 [terraform]: https://www.terraform.io
