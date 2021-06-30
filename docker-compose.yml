@@ -9,6 +9,7 @@ services:
     ports:
       - "4566:4566"
       - "4571:4571"
+      - "9000:9000"
     environment:
       - SERVICES=apigateway,cloudformation,es,iam,lambda,s3,sts
       - DATA_DIR=/tmp/localstack/data
