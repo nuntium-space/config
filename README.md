@@ -33,9 +33,29 @@ Run
 docker-compose up --build
 ```
 
-### Install `stripe` CLI
+### `Stripe`
+
+#### Install CLI
 
 See [here](https://stripe.com/docs/stripe-cli).
+
+#### Listen for events
+
+Run
+
+```
+stripe listen -f localhost:4000/webhooks/stripe
+```
+
+#### Resend event
+
+Run
+
+```
+stripe events resend EVENT_ID
+```
+
+where `EVENT_ID` is the id of the event to resend.
 
 ### Create database
 
