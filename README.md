@@ -16,3 +16,7 @@ This repo contains global configuration files that are not specific to any other
 - [docker-compose.yml](docker-compose.yml): Docker Compose file used to create the [localstack][localstack] container
 - [README.md](README.md)
 - [schema.sql](schema.sql): SQL schema for the DB
+
+[localstack]: https://github.com/localstack/localstack
+[s3]: https://aws.amazon.com/s3
+[terraform]: https://www.terraform.io
