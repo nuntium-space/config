@@ -409,6 +409,7 @@ create table "article_drafts"
   "author" id not null,
   "article" id, -- If it is null it means that this is the first draft of an article
   "status" text not null default 'draft',
+  "reason" text,
   "created_at" current_timestamp_utc not null,
   "updated_at" current_timestamp_utc not null,
 
@@ -419,6 +420,11 @@ create table "article_drafts"
   foreign key ("status") references "article_draft_statuses" on update cascade on delete cascade,
 
   check ("id" like 'dft_%'),
+  check (
+    ("status" = 'rejected' and "reason" is not null)
+    or
+    "status" <> 'rejected'
+  ),
   check ("updated_at" >= "created_at")
 );
 
@@ -518,6 +524,7 @@ insert into "article_draft_statuses"
   ("id")
 values
   ('draft'), -- Default value for new drafts, can be modified
+  ('rejected'), -- Rejected draft (reason is not null), can be modified
   ('pending-verification'); -- Draft submitted for verification, cannot be modified
 
 insert into "user_types"
