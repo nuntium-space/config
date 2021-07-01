@@ -1,5 +1,9 @@
+# LocalStack
 .localstack
 
-.terraform
-terraform.tfstate.backup
-*.tfstate.lock.info
+# Terraform
+/terraform/**/.terraform
+/terraform/**/terraform.tfstate.backup
+/terraform/**/*.tfstate.lock.info
+/terraform/production/terraform.tfstate
+/terraform/production/terraform.tfvars
