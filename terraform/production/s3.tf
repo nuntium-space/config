@@ -14,6 +14,6 @@ resource "aws_s3_bucket" "publisher-icons" {
 }
 
 resource "aws_s3_bucket" "static" {
-  bucket = "static"
+  bucket = "static.${var.site.domain}"
   acl    = "public-read"
 }
