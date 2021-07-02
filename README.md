@@ -18,9 +18,11 @@ This repo contains global configuration files that are not specific to any other
     - [apigatewayv2.tf](terraform/production/apigatewayv2.tf): [API Gateway V2][apigatewayv2] configuration
     - [elasticsearch.tf](terraform/production/elasticsearch.tf): [Elasticsearch][elasticsearch] configuration
     - [providers.tf](terraform/production/providers.tf): configuration for the required providers
+    - [rds.tf](terraform/production/rds.tf): [RDS][rds] configuration
     - [route53.tf](terraform/production/route53.tf): [Route 53][route53] configuration
     - [s3.tf](terraform/production/s3.tf): [S3][s3] configuration
     - [variables.tf](terraform/production/variables.tf): input variables declarations
+    - [vpc.tf](terraform/production/vpc.tf): [VPC][vpc] configuration
 - [.gitignore](.gitignore)
 - [docker-compose.yml](docker-compose.yml): Docker Compose file used to create the [localstack][localstack] container
 - [README.md](README.md)
@@ -29,8 +31,10 @@ This repo contains global configuration files that are not specific to any other
 [acm]: https://aws.amazon.com/acm
 [apigatewayv2]: https://aws.amazon.com/apigateway
 [elasticsearch]: https://aws.amazon.com/elasticsearch-service
+[rds]: https://aws.amazon.com/rds
 [route53]: https://aws.amazon.com/route53
 [s3]: https://aws.amazon.com/s3
+[vpc]: https://aws.amazon.com/vpc
 
 [localstack]: https://github.com/localstack/localstack
 [terraform]: https://www.terraform.io
