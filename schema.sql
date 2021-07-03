@@ -101,7 +101,6 @@ create table "publishers"
   "url" url not null,
   "organization" id not null,
   "verified" boolean not null,
-  "has_image" boolean not null,
   "dns_txt_value" text not null,
 
   primary key ("id"),
