@@ -70,6 +70,7 @@ create table "accounts"
   primary key ("id"),
 
   unique ("user", "type"),
+  unique ("type", "external_id"),
 
   foreign key ("user") references "users" on update cascade on delete cascade,
   foreign key ("type") references "account_types" on update cascade on delete cascade,
