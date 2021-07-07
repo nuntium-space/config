@@ -442,6 +442,24 @@ create table "draft_sources"
   check ("id" like 'dsr_%')
 );
 
+create table "article_reports"
+(
+  "id" id not null,
+  "user" id not null,
+  "article" id not null,
+  "reason" text not null,
+  "created_at" current_timestamp_utc not null,
+
+  primary key ("id"),
+
+  unique ("user", "article"),
+
+  foreign key ("user") references "users" on update cascade on delete cascade,
+  foreign key ("article") references "articles" on update cascade on delete cascade,
+
+  check ("id" like 'rep_%')
+);
+
 /*
 -----
 VIEWS
@@ -490,6 +508,11 @@ create trigger "update_updated_at"
 before update on "article_drafts"
 for each row
 execute procedure update_updated_at();
+
+create trigger "prevent_update"
+before update on "article_reports"
+for each row
+execute procedure prevent_update();
 
 create trigger "prevent_update"
 before update on "article_views"
