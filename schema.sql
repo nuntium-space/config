@@ -378,16 +378,15 @@ create table "bookmarks"
 create table "author_invites"
 (
   "id" id not null,
-  "user" id not null,
   "publisher" id not null,
+  "user_email" email not null,
   "created_at" current_timestamp_utc not null,
   "expires_at" timestamp not null,
 
   primary key ("id"),
 
-  unique ("user", "publisher"),
+  unique ("user_email", "publisher"),
 
-  foreign key ("user") references "users" on update cascade on delete cascade,
   foreign key ("publisher") references "publishers" on update cascade on delete cascade,
 
   check ("id" like 'inv_%'),
