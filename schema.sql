@@ -183,11 +183,19 @@ create table "bundles"
   check ("id" like 'bdl_%')
 );
 
+create table "price_billing_periods"
+(
+  "id" text not null,
+
+  primary key ("id")
+);
+
 create table "prices"
 (
   "id" id not null,
   "amount" int not null,
   "currency" char(3) not null,
+  "billing_period" text not null,
   "bundle" id not null,
   "active" boolean not null,
   "stripe_price_id" text,
@@ -195,6 +203,7 @@ create table "prices"
   primary key ("id"),
 
   foreign key ("bundle") references "bundles" on update cascade on delete cascade,
+  foreign key ("billing_period") references "price_billing_periods" on update cascade,
 
   check ("id" like 'pri_%'),
   check ("amount" >= 0)
@@ -548,6 +557,13 @@ values
   ('draft'), -- Default value for new drafts, can be modified
   ('rejected'), -- Rejected draft (reason is not null), can be modified
   ('pending-verification'); -- Draft submitted for verification, cannot be modified
+
+insert into "price_billing_periods"
+  ("id")
+values
+  ('month'),
+  ('week'),
+  ('year');
 
 insert into "user_types"
   ("id")
