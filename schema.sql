@@ -379,7 +379,7 @@ create table "author_invites"
 (
   "id" id not null,
   "publisher" id not null,
-  "user_email" email not null,
+  "user_email" email_address not null,
   "created_at" current_timestamp_utc not null,
   "expires_at" timestamp not null,
 
