@@ -138,8 +138,6 @@ create table "articles"
   "content" json not null,
   "author" id not null,
   "reading_time" int not null,
-  "view_count" int not null default 0,
-  "like_count" int not null default 0,
   "created_at" current_timestamp_utc not null,
   "updated_at" current_timestamp_utc not null,
 
@@ -150,6 +148,20 @@ create table "articles"
   check ("id" like 'art_%'),
   check ("reading_time" >= 0),
   check ("updated_at" >= "created_at")
+);
+
+create table "article_stats"
+(
+  "id" id not null,
+  "view_count" int not null default 0,
+  "like_count" int not null default 0,
+
+  primary key ("id"),
+
+  foreign key ("id") references "articles" on update cascade on delete cascade,
+
+  check ("view_count" >= 0),
+  check ("like_count" >= 0)
 );
 
 create table "sessions"
