@@ -8,13 +8,8 @@ resource "aws_s3_bucket" "site" {
   }
 }
 
-resource "aws_s3_bucket" "publisher-icons" {
-  bucket = "publisher-icons"
-  acl    = "public-read"
-}
-
-resource "aws_s3_bucket" "user-icons" {
-  bucket = "user-icons"
+resource "aws_s3_bucket" "profile_images" {
+  bucket = "profile-images"
   acl    = "public-read"
 }
 
