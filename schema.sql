@@ -344,21 +344,13 @@ create table "user_history"
 */
 create table "article_views"
 (
-  /*
-    Added because a primary key with just the
-    article id and the timestamp is not necessarily
-    enough: just think of two requests at the exact same time
-    from different users.
-  */
-  "id" id not null,
+  "user" id not null,
   "article" id not null,
   "timestamp" current_timestamp_utc not null,
 
-  primary key ("id"),
+  primary key ("user", "article", "timestamp"),
 
-  foreign key ("article") references "articles" on update cascade on delete cascade,
-
-  check ("id" like 'avw_%')
+  foreign key ("article") references "articles" on update cascade on delete cascade
 );
 
 create table "sources"
