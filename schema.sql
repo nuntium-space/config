@@ -339,8 +339,7 @@ create table "user_history"
 /*
   This table cannot be cleared, unless the article a row refers to is deleted.
 
-  This can be used to provide time series data for each article, to maybe draw
-  a chart that shows the views for a certain period of time.
+  This is used to provide time series data for each article.
 */
 create table "article_views"
 (
