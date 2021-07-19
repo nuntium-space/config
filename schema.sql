@@ -156,7 +156,7 @@ create table "article_stats"
   "view_count" int not null default 0,
   "unique_view_count" int not null default 0,
   "like_count" int not null default 0,
-  "score" double precision generated always as (("like_count" * 0.2) + ("view_count" * 0.1)) stored,
+  "score" double precision generated always as (("unique_view_count" * 0.3) + ("like_count" * 0.1)) stored,
 
   primary key ("id"),
 
