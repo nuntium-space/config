@@ -154,13 +154,16 @@ create table "article_stats"
 (
   "id" id not null,
   "view_count" int not null default 0,
+  "unique_view_count" int not null default 0,
   "like_count" int not null default 0,
+  "score" double precision generated always as (("like_count" * 0.2) + ("view_count" * 0.1)) stored,
 
   primary key ("id"),
 
   foreign key ("id") references "articles" on update cascade on delete cascade,
 
   check ("view_count" >= 0),
+  check ("unique_view_count" <= "view_count"),
   check ("like_count" >= 0)
 );
 
