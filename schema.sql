@@ -47,6 +47,7 @@ create table "users"
   primary key ("id"),
 
   unique ("email"),
+  unique ("stripe_customer_id"),
 
   foreign key ("type") references "user_types" on update cascade on delete cascade,
 
@@ -89,6 +90,7 @@ create table "organizations"
   primary key ("id"),
 
   unique ("name"),
+  unique ("stripe_account_id"),
 
   foreign key ("user") references "users" on update cascade on delete cascade,
 
