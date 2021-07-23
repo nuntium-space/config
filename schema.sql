@@ -194,6 +194,7 @@ create table "bundles"
   primary key ("id"),
 
   unique ("name", "organization"),
+  unique ("stripe_product_id"),
 
   foreign key ("organization") references "organizations" on update cascade,
 
